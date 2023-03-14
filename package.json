@@ -2,7 +2,8 @@
   "name": "mern-demos-21-2",
   "private": true,
   "dependencies": {
-    "concurrently": "^7.6.0"
+    "concurrently": "^7.6.0",
+    "mongoose": "^7.0.1"
   },
   "scripts": {
     "client": "cd client && npm run dev",
