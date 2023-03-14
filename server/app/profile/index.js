@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { model, Schema } from "mongoose";
 
 const ProfileSchema = new Schema({
   name: {
@@ -11,7 +11,7 @@ const ProfileSchema = new Schema({
     // No need for a separate SCHEMA for primitive types
     {
       type: String,
-      required: true,
+      default: [],
     },
   ],
 });
