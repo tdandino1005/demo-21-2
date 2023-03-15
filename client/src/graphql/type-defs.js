@@ -1,11 +1,27 @@
-import { gql } from "apollo/client";
+import { gql } from "@apollo/client";
 
 const THOUGHTS = gql`
-query Thoughts {
+  query Thoughts {
     thoughts {
-        thoughtTextthoughtAuthor
+      id
+      thoughtText
+      thoughtAuthor
+      createdAt
+      comments {
+        commentText
         createdAt
-        comments {
-            commentText
-    
+        id
+      }
+    }
+  }
+`;
+
+const PROFILES = gql`
+  query Profiles {
+    profiles {
+      id
+      name
+      skills
+    }
+  }
 `;
