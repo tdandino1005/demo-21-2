@@ -1,12 +1,8 @@
-const jwt = require('jsonwebtoken');
+import config from "./config.js";
+import jwt from "jsonwebtoken";
 
-const secret = "secret";
-const expiration = "2h";
-
-module.exports = {
-    signToken: function ({ username, email, _id }) {
-        const payload = { username, email, _id };
-
-        return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
-    },
+export const generateToken = (payload) => {
+  return jwt.sign({ data: payload }, config.jwt.secret, {
+    expiresIn: config.jwt.expiresIn,
+  });
 };

@@ -1,12 +1,13 @@
 import User from "./index.js";
 
-// Using controller pattern to separate business logic from routes
 const controller = {
-  create(username, password) {
-    // using bracket notation to access the function
-    return User.create({ username, password });
+  async create(username, password) {
+    const createdUser = await User.create({ username, password });
+
+    const jwt = await createdUser.authenticate(password);
+
+    return { jwt };
   },
-  //   using asycn/await to handle promises
   async show(username, password) {
     const user = await User.findOne({ username });
 
@@ -20,5 +21,4 @@ const controller = {
   },
 };
 
-// Exporting controller to be used in routes
 export default controller;
