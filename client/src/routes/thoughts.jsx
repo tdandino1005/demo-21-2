@@ -13,6 +13,7 @@ export default function App() {
 
   //  reurning data from the query in a list
   return data.thoughts.map(({ id, thoughtText, thoughtAuthor }) => (
+    // using the id as the key for the list item
     <ul key={id}>
       <li>{thoughtText}</li>
       <li>{thoughtAuthor}</li>

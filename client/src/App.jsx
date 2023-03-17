@@ -1,4 +1,5 @@
-import { Link, RouterProvider, createBrowserRouter } from "react-router-dom";
+// using Link from react-router-dom to create a link to the /thoughts route
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./layout";
 import Profiles from "./routes/profiles";
 import Thoughts from "./routes/thoughts";
@@ -21,18 +22,5 @@ const router = createBrowserRouter([
 ]);
 
 export default function App() {
-  return (
-    <RouterProvider router={router}>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/profiles">Profiles</Link>
-          </li>
-          <li>
-            <Link to="/thoughts">Thoughts</Link>
-          </li>
-        </ul>
-      </nav>
-    </RouterProvider>
-  );
+  return <RouterProvider router={router} />;
 }
